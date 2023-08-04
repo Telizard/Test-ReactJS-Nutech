@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API_BASE_URL = 'https://648816ca0e2469c038fceb90.mockapi.io/';
+const API_BASE_URL = process.env.API_BASE_URL;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
