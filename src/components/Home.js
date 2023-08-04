@@ -116,15 +116,15 @@ const Home = () => {
   return (
     <div className="bg-gradient-to-r from-blue-500 to-white-400">
       <Navbar user={getName()} onLogout={handleLogout} />
-      <div className="container mx-auto p-4 ">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold text-white">Produk</h2>
-          <button onClick={handleAddProduct} className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors">
+      <div className="container mx-auto p-5 m-5 ">
+        <div className="flex justify-between items-center mb-4"></div>
+        <div className="mb-4">
+          <input type="text" placeholder="Pencarian produk...." value={searchTerm} onChange={handleSearchChange} className=" border border-orange-300 rounded-md m-1 px-5 py-2 focus:outline-none focus:ring focus:ring-red-300" />
+
+          <button onClick={handleAddProduct} className="bg-orange-600 text-white m-5 py-3 px-3 rounded-md hover:bg-blue-600 transition-colors">
             Tambah Produk
           </button>
-        </div>
-        <div className="mb-4">
-          <input type="text" placeholder="Pencarian produk...." value={searchTerm} onChange={handleSearchChange} className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-red-300" />
+          <h2 className="text-2xl font-bold text-white m-3">Tabel Data Produk</h2>
         </div>
         <table className="w-full border-collapse">
           <thead className="bg-blue-500 text-white">
@@ -164,7 +164,7 @@ const Home = () => {
             {Array(Math.ceil(filteredProducts.length / productsPerPage))
               .fill()
               .map((_, index) => (
-                <li key={index} onClick={() => handlePageChange(index + 1)} className={`cursor-pointer py-2 px-4 rounded-full ${currentPage === index + 1 ? "bg-red-500 text-white" : "bg-gray-200"}`}>
+                <li key={index} onClick={() => handlePageChange(index + 1)} className={`cursor-pointer py-2 mx-1 px-4 rounded-full ${currentPage === index + 1 ? "bg-blue-700 text-white" : "bg-gray-200"}`}>
                   {index + 1}
                 </li>
               ))}
@@ -193,7 +193,7 @@ const Home = () => {
                 <button onClick={handleCancelDelete} className="bg-gray-200 text-gray-700 py-2 px-4 rounded-md mr-2">
                   Tidak
                 </button>
-                <button onClick={handleConfirmDelete} className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors">
+                <button onClick={handleConfirmDelete} className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-orange-600 transition-colors">
                   Ya
                 </button>
               </div>

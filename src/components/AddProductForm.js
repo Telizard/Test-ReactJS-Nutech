@@ -51,7 +51,7 @@ const AddProductForm = ({ onProductAdded, onClose, listProducts, existingProduct
 
   return (
     <div className="bg-white p-4 rounded-lg">
-      <h2 className="text-lg font-semibold mb-4">{existingProduct ? "Edit Product" : "Add New Product"}</h2>
+      <h2 className="text-lg font-semibold mb-4">{existingProduct ? "Edit Produk" : "Tambah Produk Baru"}</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="image" className="block mb-2 text-sm font-medium">
@@ -85,7 +85,7 @@ const AddProductForm = ({ onProductAdded, onClose, listProducts, existingProduct
           <input type="number" id="stock" value={stock} onChange={(e) => setStock(e.target.value)} className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-red-300" />
         </div>
         <div className="flex justify-end">
-          <button type="submit" className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors">
+          <button type="submit" className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors">
             {existingProduct ? "Updated" : "Add"}
           </button>
         </div>

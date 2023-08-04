@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import Login from "./components/Login";
 
 import Home from "./components/Home";
 import { getAccessToken } from "./utils/LocalStorage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Signin from "./pages/Signin/Signin";
 
 const isAuthenticated = !!getAccessToken();
 
@@ -23,7 +23,7 @@ function App() {
       <ToastContainer position="bottom-center" theme="colored" />
       <Router>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Signin />} />
 
           <Route path="*" element={<PrivateRoute element={Home} />} />
         </Routes>
